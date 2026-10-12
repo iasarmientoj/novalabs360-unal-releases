@@ -80,15 +80,19 @@ for experiencia in orden_labs:
 	# obtener cada archivo con su peso
 	#el .dlc ya se agrego arriba como android, no se repite como contenido
 	lista_archivos = [f for f in os.listdir( os.path.join(ruta_labs, carpeta) ) if os.path.isfile(os.path.join(ruta_labs, carpeta, f)) and os.path.splitext(f)[1] != ".dlc"]
+	#con zip los videos van dentro de el: un .mp4 suelto (copia, archivo de camara) no se lista, o la app lo bajaria aparte
+	tiene_zip = any(os.path.splitext(f)[1] == ".zip" for f in lista_archivos)
 	for archivo in lista_archivos:
 		url = link_s3 + "/" + carpeta + "/" + archivo
-		type = "ERRORRRRRRRRRRRRRRRRR"
-		if os.path.splitext(archivo)[1] == ".mp4":
-			type = "video"
-		elif os.path.splitext(archivo)[1] == ".jpg":
-			type = "image"
-		elif os.path.splitext(archivo)[1] == ".zip":
+		extension = os.path.splitext(archivo)[1]
+		if extension == ".zip":
 			type = "zip"
+		elif extension == ".jpg":
+			type = "image"
+		elif extension == ".mp4" and not tiene_zip:
+			type = "video"
+		else:
+			continue   # .meta de Unity, .MP4 de camara, etc.: antes salian como "ERRORRRR" y la app intentaba bajarlos
 		size = os.path.getsize(os.path.join(ruta_labs, carpeta, archivo))
 		key = carpeta + "/" + archivo
 		contentList.append(ContentObjeto(url, type, size, key))

@@ -3,8 +3,11 @@
 import os
 import json
 
-package = 'novalabs360unal'
-link_s3 = "https://assetbundles-nl360.s3.us-west-2.amazonaws.com" + '/' + package
+# las URLs apuntan a GitHub Releases: una release por lab, con tag = codigo del lab
+link_s3 = "https://github.com/iasarmientoj/novalabs360-unal-releases/releases/download"
+
+# carpeta con una subcarpeta por lab (.dlc, .zip, .jpg). Va fuera del repo: esos archivos se suben a Releases, no a git
+ruta_labs = "../DLC Geotecnia"
 
 # LEER DEL ARCHIVO codin-nombres-version-disp-orden.txt, ese da el orden y los laboratorios disponibles
 
@@ -56,7 +59,7 @@ for experiencia in orden_labs:
 	url = link_s3 + "/" + carpeta + "/" + nombre_dlc
 	type = "dlc"
 	try:
-		size = os.path.getsize(carpeta + "/" + nombre_dlc)
+		size = os.path.getsize(os.path.join(ruta_labs, carpeta, nombre_dlc))
 	except:
 		size = 0
 	key = carpeta + "/android/" + nombre_dlc
@@ -76,7 +79,7 @@ for experiencia in orden_labs:
 	
 	# obtener cada archivo con su peso
 	#el .dlc ya se agrego arriba como android, no se repite como contenido
-	lista_archivos = [f for f in os.listdir( carpeta ) if os.path.isfile(os.path.join(carpeta, f)) and os.path.splitext(f)[1] != ".dlc"]
+	lista_archivos = [f for f in os.listdir( os.path.join(ruta_labs, carpeta) ) if os.path.isfile(os.path.join(ruta_labs, carpeta, f)) and os.path.splitext(f)[1] != ".dlc"]
 	for archivo in lista_archivos:
 		url = link_s3 + "/" + carpeta + "/" + archivo
 		type = "ERRORRRRRRRRRRRRRRRRR"
@@ -86,7 +89,7 @@ for experiencia in orden_labs:
 			type = "image"
 		elif os.path.splitext(archivo)[1] == ".zip":
 			type = "zip"
-		size = os.path.getsize(carpeta + "/" + archivo)
+		size = os.path.getsize(os.path.join(ruta_labs, carpeta, archivo))
 		key = carpeta + "/" + archivo
 		contentList.append(ContentObjeto(url, type, size, key))
 	

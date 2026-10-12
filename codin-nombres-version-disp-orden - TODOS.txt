@@ -1,0 +1,22 @@
+UNAL_INGE_NL360_001	0.0.1	Geotecnia	1. Descripción e identificación de suelos
+UNAL_INGE_NL360_002	0.0.1	Geotecnia	2. Conductividad hidráulica
+UNAL_INGE_NL360_003	0.0.1	Geotecnia	3. Consolidación unidimensional
+UNAL_INGE_NL360_004	0.0.1	Geotecnia	4. Corte directo
+UNAL_CENT_NL360_001	0.0.1	Física mecánica	Segunda ley de Newton
+UNAL_CENT_NL360_002	0.0.1	Física mecánica	Movimiento circular y fuerza centrípeta
+UNAL_CENT_NL360_007	0.0.1	Física mecánica	Aceleración de la gravedad
+UNAL_CENT_NL360_008	0.0.1	Física mecánica	Colisiones unidimensionales
+UNAL_CENT_NL360_003	0.0.1	Física electricidad y magnetismo	Relación carga a masa del electrón
+UNAL_CENT_NL360_004	0.0.1	Física electricidad y magnetismo	Magnitud del campo magnético terrestre
+UNAL_CENT_NL360_005	0.0.1	Física electricidad y magnetismo	Balanza de corriente
+UNAL_CENT_NL360_006	0.0.1	Física electricidad y magnetismo	Circuito RC
+UNAL_CENT_NL360_009	0.0.1	Física electricidad y magnetismo	Líneas de campo eléctrico
+UNAL_CENT_NL360_013	0.0.1	Operaciones unitarias	Molienda y tamizado
+UNAL_CENT_NL360_014	0.0.1	Operaciones unitarias	Secado
+UNAL_CENT_NL360_015	0.0.1	Operaciones unitarias	Banco de bombas
+UNAL_INGE_NL360_005	0.0.1	Ingeniería	Industrial - Mecanizado por arranque de viruta
+UNAL_INGE_NL360_006	0.0.1	Ingeniería	Eléctrica - Máquinas de inducción
+UNAL_INGE_NL360_008	0.0.1	Ingeniería	Agrícola - Termografía aplicada en el sector rural
+UNAL_INGE_NL360_009	0.0.1	Ingeniería	Química - Destilación
+UNAL_INGE_NL360_010	0.0.1	Ingeniería	Mecánica - Muestras metalográficas
+UNAL_CENT_NL360_011	0.0.1	Arquitectura	Patologías en templos patrimoniales

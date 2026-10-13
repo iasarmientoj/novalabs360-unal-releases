@@ -7,7 +7,7 @@ import json
 link_s3 = "https://github.com/iasarmientoj/novalabs360-unal-releases/releases/download"
 
 # carpeta con una subcarpeta por lab (.dlc, .zip, .jpg). Va fuera del repo: esos archivos se suben a Releases, no a git
-ruta_labs = "../DLC Geotecnia"
+ruta_labs = "../DLC unal"
 
 # LEER DEL ARCHIVO codin-nombres-version-disp-orden.txt, ese da el orden y los laboratorios disponibles
 
